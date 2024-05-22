@@ -1,0 +1,21 @@
+
+.resturants{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+   margin-left: 20px;
+   
+    
+    
+}
+.filter{
+    margin: 20px;
+    
+}
+.input-box{
+    padding: 5px;
+}
+.filter-res{
+    margin: 15px;
+}

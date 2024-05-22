@@ -1,0 +1,47 @@
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about-us h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .about-us h3 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .about-us p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .about-us ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  .about-us ul li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  /* Example of link styling */
+  .about-us a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .about-us a:hover {
+    text-decoration: underline;
+  }
+  

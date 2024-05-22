@@ -1,0 +1,25 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1a1e3f
+}
+.logo{
+    width: 100px;
+
+}
+.links{
+    display: flex;
+    padding-top: 50px;
+    justify-content: flex-end;
+    gap: 20px;
+    margin: 5px;
+    margin-right:20px ;
+
+}
+.links > a {
+    margin-left: 10px; /* Adjust spacing between links */
+    font-size: 16px; /* Base font size */
+    text-decoration: none;
+    color: white;
+   
+  }

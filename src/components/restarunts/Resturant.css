@@ -1,0 +1,16 @@
+.res-card{
+    border: 2px  solid #ccc;
+    margin:5px;
+    border-radius: 10px;
+    width: 280px;
+    text-decoration: none;
+    color: black;
+    
+    
+}
+.res-logo{
+    width:280px;
+    height: 200px;
+    border-radius:10px ;
+
+}
