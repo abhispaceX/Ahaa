@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import Body from "./components/Body/Boody.js";
 import NavBar from "./components/navBar/navbar";
+
 import About from "./components/About.js";
 import { Route, Routes, BrowserRouter, useLocation } from 'react-router-dom';
 
@@ -9,6 +10,8 @@ import RestuarantMenu from "./components/menu.js";
 import Signup from "./components/Signup.js";
 import Login from './components/Login.js';
 import FruitInput from "./components/fruit.js"
+import {Provider} from "react-redux"
+import  Store from "./utils/store.js"
 const Grocery = lazy(() => import("./components/Grocery"));
 
 function AppWrapper() {
@@ -29,7 +32,7 @@ function App() {
   }, [location]);
 
   return (
-    <>
+    <> <Provider store={Store} >
       {showNavBar && <NavBar />}
       <Routes>
         <Route path="/" element={<Body />}></Route>
@@ -41,6 +44,7 @@ function App() {
         <Route path="/restuarent/:resid" element={<RestuarantMenu />}></Route>
         <Route path="/grocery" element={<Suspense fallback={<h1>loading..</h1>}><Grocery /></Suspense>}></Route>
       </Routes>
+      </Provider>
     </>
   );
 }

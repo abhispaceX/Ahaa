@@ -18,7 +18,7 @@ const Signup=()=>{
     const validate = (value) => { 
   
         if (validator.isStrongPassword(value, { 
-            minLength: 8, minLowercase: 1, 
+            minLength: 8, minLowercase: 1,
             minUppercase: 1, minNumbers: 1, minSymbols: 1 
         })) { 
             setErrorMessage('') 
@@ -63,7 +63,7 @@ const Signup=()=>{
     }
     const handleChange=(e)=>{
         setData((prevState)=>{
-           return({ ...prevState, [e.target.name]:validate(e.target.value) })
+           return({ ...prevState, [e.target.name]:(e.target.value) })
         })
     }
     return(
@@ -97,7 +97,7 @@ const Signup=()=>{
       />
       {mailError && <p className="text-red-500 text-sm mt-1">{mailError}</p>}
           <label htmlFor="password">Password:</label>
-          <input  className="shadow  border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" id="password" name="password" pattern="" value={data.password} onChange={handleChange} placeholder="******************" required ></input>
+          <input  className="shadow  border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" id="password" name="password"  value={data.password} onChange={handleChange} placeholder="******************" required ></input>
           {errorMessage === '' ? null : 
                     <p className="   text-xs  text-red-600" >{errorMessage}</p>} 
 

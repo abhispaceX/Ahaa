@@ -1,7 +1,7 @@
 import React from 'react';
 
 
- const Resturant = ({resList,addToCart}) => {
+ const Resturant = ({resList}) => {
   const {
     cloudinaryImageId,
     id,
@@ -11,9 +11,7 @@ import React from 'react';
     costForTwo,
     sla,
   } = resList.info;
-  // const handleCart=()=>{
-  //   addToCart(resList)
-  // }
+ 
      return(
         <>
         

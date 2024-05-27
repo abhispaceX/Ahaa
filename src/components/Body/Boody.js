@@ -10,7 +10,6 @@ const Body = () => {
     const [filteredData, setFilteredData] = useState([]);
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
-    
    
     // State to track loading status
 
@@ -25,18 +24,17 @@ const Body = () => {
        
         console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
     }
-    const addToCart=(item)=>{
-        const cartItems=JSON.parse(localStorage.getItem('cartItems') ) || [];
-        console.log(cartItems)
-        cartItems.push(item); 
-        localStorage.setItem('cartItems',JSON.stringify(cartItems))
-    }
+
     
 
     const handleRes = () => {
         const filteredres = listOfRestaurants.filter(item => item.info.avgRating > 4.5);
         setFilteredData(filteredres);
     };
+  
+     
+
+  
 
     const handleSearch = () => {
         const searched = listOfRestaurants.filter(item => item.info.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -83,7 +81,7 @@ const Body = () => {
                 
                 {filteredData.map((eachRes) => (
                     <Link to={"/restuarent/"+eachRes.info.id} style={{textDecoration:'none'}} key={eachRes.info.id}>
-                    <Resturant resList={eachRes} addToCart={addToCart} />
+                    <Resturant resList={eachRes}  />
                     </Link>
                 ))}
                 

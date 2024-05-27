@@ -1,41 +1,16 @@
-import {useEffect, useState}from "react";
+import { useSelector } from "react-redux";
 import "./cart.css"
+import ListItems from "../ListItems";
 const CartPage=()=>{
-    const[cartItems,setCartItems]=useState([])
-    useEffect(()=>{
-        const storedResturant=JSON.parse(localStorage.getItem("cartItems")) || [];
-        setCartItems(storedResturant);
-      },[]);
-
-    const handleRemove=(id)=>{
-        const updatedcart=[...cartItems]
-        updatedcart.splice(id,1)
-        setCartItems(updatedcart);
-        localStorage.setItem("cartItems", JSON.stringify(updatedcart));
-
-    }
-   
-    
+    const cartItems = useSelector((store)=>store.cart.items)
+    console.log(cartItems)
     return(
         <>
-        <div className=""> 
-            <h1>Cart Page</h1>
-
-            <div className="rest-card" >
-                {cartItems.map((item)=>(
-                    <div key={item.info.id} className="card-item" >
-                        <img className='res-logo' src={'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/' +
-                        item.info.cloudinaryImageId} alt="Biryani" />
-                            <h3>{item.info.name}</h3>
-                            <h4>{item.info.cuisines.join(', ')}</h4>
-                            <h4>Rating: {item.info.avgRating} stars </h4>
-                            <h4>{item.info.costForTwo}</h4>
-                            <h4>{item.info.sla.slaString}</h4>
-                            <button onClick={handleRemove}>Remove </button>
-
-                    </div>
-                ))}
-            </div>
+        <div className="text-center m-5 p-5">
+            <h1 className=" text-2xl font-bold">Cart</h1>
+        <div className="w-7/12 my-20 mx-auto"> 
+            <ListItems items={cartItems}/>
+        </div>
         </div>
         </>
     )

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
+import {useSelector } from "react-redux";
+
 
 const NavBar=()=>{
   const[btnName, setBtnName]=useState("login")
+  const item =useSelector((store)=>store.cart.items)
+  console.log(item)
+ 
+  
     return(
     <>
     <div className="flex justify-between bg-blue-950 h-50">
@@ -18,7 +24,7 @@ const NavBar=()=>{
         <Link to="/" >Home</Link> 
         <Link to="/about" >About Us</Link>
         <Link to="/contact">contact Us</Link>
-        <Link to="/cart">cart</Link>
+        <Link to="/cart" >cart ({item.length} items)</Link>
         <Link to="/fruit">fruit</Link>
         <Link to="/login"onClick={()=> btnName==="login"? setBtnName("logout"):setBtnName("login")}>{btnName}</Link>
         <Link to="/grocery" >Grocery</Link> 
